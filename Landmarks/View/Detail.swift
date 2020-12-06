@@ -7,7 +7,7 @@ A view showing the details for a landmark.
 
 import SwiftUI
 
-struct ContentView: View {
+struct DetailView: View {
     var body: some View {
         VStack {
             MapView()
@@ -36,8 +36,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        DetailView()
     }
 }
