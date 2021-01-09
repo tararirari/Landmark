@@ -9,13 +9,14 @@
 import SwiftUI
 
 struct LandmarkRow: View {
+    let landmark: Landmark
     
     var body: some View {
         HStack {
             Image("turtlerock")
                 .resizable()
                 .frame(width: 50, height: 50)
-            Text("Turtle Rock")
+            Text(landmark.name)
             Spacer()
         }
     }
@@ -23,7 +24,7 @@ struct LandmarkRow: View {
 
 struct LandmarkRow_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkRow()
+        LandmarkRow(landmark: Landmark(name: "Tokyo Tech", category: "Featured", city: "Twentynine Palms", state: "Meguro", id: 1000, park: "Oookayama National Park", coordinates: Coordinates(longitude: 139.6813415, latitude: 35.6051229), imageName: "titech"))
     }
 }
 

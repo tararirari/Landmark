@@ -9,17 +9,23 @@
 import SwiftUI
 
 struct LandmarkList: View {
+    @ObservedObject var viewModel = LandMarkListViewModel()
     var body: some View {
         NavigationView {
-            List {
-                NavigationLink(
-                    destination: DetailView(),
-                    label: {
-                        LandmarkRow()
-                    })
-            }
+//            List {
+//                NavigationLink(
+//                    destination: DetailView(),
+//                    label: {
+//                        LandmarkRow()
+//                    })
+//            }
+            List (viewModel.landmarks, rowContent: { (landmark) in
+                LandmarkRow(landmark: landmark)
+            })
             .navigationBarTitle(Text("Landmarks"))
-        }
+        }.onAppear(perform: {
+            viewModel.appear()
+        })
     }
 }
 
